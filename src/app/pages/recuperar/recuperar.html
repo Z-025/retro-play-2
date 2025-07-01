@@ -1,0 +1,31 @@
+<main class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h2 class="card-title text-center mb-4">Recuperar Contraseña</h2>
+          <p class="text-center text-muted mb-4">Ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.</p>
+          
+          <form [formGroup]="recuperarForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo Electrónico</label>
+              <input type="email" class="form-control" id="email" placeholder="tu@email.com" formControlName="email">
+              <div *ngIf="recuperarForm.get('email')?.invalid && (recuperarForm.get('email')?.dirty || recuperarForm.get('email')?.touched)" class="text-danger mt-1">
+                <div *ngIf="recuperarForm.get('email')?.errors?.['required']">El correo es requerido.</div>
+                <div *ngIf="recuperarForm.get('email')?.errors?.['email']">El formato del correo no es válido.</div>
+              </div>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Enviar Enlace</button>
+            </div>
+          </form>
+          
+          <div class="text-center mt-4">
+            <a routerLink="/login" class="text-decoration-none">Volver a Iniciar Sesión</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

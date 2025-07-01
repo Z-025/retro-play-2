@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --color-amarillo: #F2C40F;
+    --color-verde-oscuro: #074523;
+    --color-rojo: #D81E05;
+    --color-marron-oscuro: #432818;
+    --color-fondo-crema: #FEF8E7;
+}
+
+.app-header {
+    background-color: #FEF5E7;
+    padding: 15px 0;
+}
+
+body {
+    background-color: #FEF5E7;
+    color: var(--color-marron-oscuro);
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+
+.navbar {
+    background-color: var(--color-marron-oscuro) !important;
+    border-bottom: 3px solid var(--color-amarillo);
+}
+
+
+.navbar-brand, .nav-link {
+    font-weight: bold;
+}
+
+
+h1, h2, h3 {
+    color: var(--color-rojo);
+    font-weight: bold;
+}
+
+
+.btn-primary {
+    background-color: var(--color-verde-oscuro);
+    border-color: var(--color-verde-oscuro);
+}
+
+.btn-primary:hover {
+    background-color: #042f18;
+    border-color: #042f18;
+}
+
+.logo-principal {
+    max-width: 450px;
+    width: 80%;
+    height: auto;
+}

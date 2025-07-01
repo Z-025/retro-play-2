@@ -1,0 +1,55 @@
+<main class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-7">
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h2 class="card-title mb-4">Mi Perfil</h2>
+          <form [formGroup]="perfilForm" (ngSubmit)="onSubmit()" novalidate>
+            
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="name" formControlName="name">
+              <div *ngIf="perfilForm.get('name')?.invalid && (perfilForm.get('name')?.dirty || perfilForm.get('name')?.touched)" class="text-danger mt-1">
+                <div *ngIf="perfilForm.get('name')?.errors?.['required']">El nombre es requerido.</div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo Electrónico (no se puede cambiar)</label>
+              <input type="email" class="form-control" id="email" formControlName="email">
+            </div>
+
+            <hr>
+            <p class="text-muted">Cambiar contraseña (opcional)</p>
+
+            <div class="mb-3">
+              <label for="currentPassword" class="form-label">Contraseña Actual</label>
+              <input type="password" class="form-control" id="currentPassword" formControlName="currentPassword">
+            </div>
+
+            <div class="mb-3">
+              <label for="newPassword" class="form-label">Nueva Contraseña</label>
+              <input type="password" class="form-control" id="newPassword" formControlName="newPassword">
+              <div *ngIf="perfilForm.get('newPassword')?.invalid && (perfilForm.get('newPassword')?.dirty || perfilForm.get('newPassword')?.touched)" class="text-danger mt-1 small">
+                <div *ngIf="perfilForm.get('newPassword')?.errors?.['minlength']">Debe tener al menos 8 caracteres.</div>
+                <div *ngIf="perfilForm.get('newPassword')?.errors?.['pattern']">Debe incluir mayúsculas, números y símbolos.</div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="confirmNewPassword" class="form-label">Confirmar Nueva Contraseña</label>
+              <input type="password" class="form-control" id="confirmNewPassword" formControlName="confirmNewPassword">
+              <div *ngIf="perfilForm.hasError('passwordMismatch') && perfilForm.get('confirmNewPassword')?.touched" class="text-danger mt-1">
+                Las contraseñas nuevas no coinciden.
+              </div>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Actualizar Perfil</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

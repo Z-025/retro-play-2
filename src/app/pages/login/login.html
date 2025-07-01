@@ -1,0 +1,43 @@
+<main class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h2 class="card-title text-center mb-4">Iniciar Sesión</h2>
+          
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+            
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo Electrónico</label>
+              <input type="email" class="form-control" id="email" placeholder="tu@email.com" formControlName="email">
+              <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-danger mt-1">
+                <div *ngIf="email?.errors?.['required']">El correo es requerido.</div>
+                <div *ngIf="email?.errors?.['email']">El formato del correo no es válido.</div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="password" placeholder="Tu contraseña" formControlName="password">
+              <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="text-danger mt-1">
+                <div *ngIf="password?.errors?.['required']">La contraseña es requerida.</div>
+              </div>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Ingresar</button>
+            </div>
+          </form>
+
+          <div class="text-center mt-4">
+            <a routerLink="/recuperar" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
+          </div>
+          <hr>
+          <div class="text-center">
+            <p class="mb-0">¿No tienes una cuenta? <a routerLink="/register" class="text-decoration-none fw-bold">Regístrate</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
