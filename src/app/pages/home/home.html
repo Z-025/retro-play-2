@@ -1,1 +1,12 @@
-<p>home works!</p>
+<header>
+  <h1>Catálogo de Juegos</h1>
+</header>
+
+<div class="grid">
+  <div class="card" *ngFor="let game of games">
+    <img [src]="game.imageUrl" [alt]="game.name" />
+    <h2>{{ game.name }}</h2>
+    <p>{{ game.platform }}</p>
+    <p>Precio: ${{ game.price }}</p>
+  </div>
+</div>

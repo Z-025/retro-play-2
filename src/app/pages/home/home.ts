@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { GameService, Game } from '../../services/game';
 
 /**
  * @description
@@ -7,10 +9,16 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './home.html',
-  styleUrl: './home.css'
+  styleUrls: ['./home.css']
 })
-export class Home {
+export class Home implements OnInit {
+  games: Game[] = [];
 
+  constructor(private gameService: GameService) {}
+
+  ngOnInit(): void {
+    this.games = this.gameService.getGames();
+  }
 }
