@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Login } from './login';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('Login Component', () => {
   let component: Login;
@@ -8,7 +9,7 @@ describe('Login Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ Login, ReactiveFormsModule ]
+      imports: [ Login, ReactiveFormsModule, RouterTestingModule ]
     })
     .compileComponents();
     
@@ -39,5 +40,16 @@ describe('Login Component', () => {
     password?.setValue('unaClaveSegura123');
     
     expect(component.loginForm.valid).toBeTruthy();
+  });
+
+  // --- PRUEBA AVANZADA DE COMPORTAMIENTO ---
+  it('debe marcar todos los campos como "tocados" si el formulario es inválido al enviarse', () => {
+    // Llama al método onSubmit() sin llenar el formulario
+    component.onSubmit();
+    
+    // Verificamos que los campos ahora estén marcados como "touched"
+    // para que se muestren los mensajes de error en la interfaz.
+    expect(component.email?.touched).toBe(true);
+    expect(component.password?.touched).toBe(true);
   });
 });
