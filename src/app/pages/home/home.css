@@ -1,0 +1,47 @@
+/* Estilo para la barra de navegación de la línea de tiempo */
+.timeline-nav {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  z-index: 1000;
+}
+
+.timeline-nav-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 0 5px;
+  transition: background-color 0.3s;
+}
+
+.timeline-nav-item:hover {
+  background-color: #e9ecef;
+}
+
+/* Estilo para el área de contenido */
+.content-area {
+  padding: 2rem;
+}
+
+.content-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-top: 60px; /* Espacio para que el ancla del scroll quede debajo de la barra */
+  margin-top: -60px; /* Compensa el padding para que no haya saltos */
+}
+
+.content-block img {
+  width: 200px;
+  height: auto;
+  margin-right: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.content-block .text-content {
+  max-width: 600px;
+}

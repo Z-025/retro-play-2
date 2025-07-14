@@ -6,11 +6,13 @@ import { Login } from './pages/login/login';
 import { Register } from './pages/register/register';
 import { Perfil } from './pages/perfil/perfil';
 import { Recuperar } from './pages/recuperar/recuperar';
+import { Tienda } from './pages/tienda/tienda';
 
 export const routes: Routes = [
     // This route redirects the base URL to the '/home' path
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     
+    { path: 'tienda', component: Tienda },
     // Route for the home page
     { path: 'home', component: Home },
     

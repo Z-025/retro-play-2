@@ -1,10 +1,148 @@
 {
+  "milestones": [
+    {
+      "id": 1,
+      "year": 1980,
+      "title": "Pac-Man",
+      "description": "A missing slice of pizza inspires Namco’s Toru Iwatani to create Pac-Man, which goes on sale in July 1980. That year a version of Pac-Man for Atari 2600 becomes the first arcade hit to appear on a home console. Two years later, Ms. Pac-Man strikes a blow for gender equality by becoming the best-selling arcade game of all time.",
+      "imageUrl": "assets/img/milestones/pac-man.jpg"
+    },
+    {
+      "id": 2,
+      "year": 1981,
+      "title": "Donkey Kong",
+      "description": "Video game fans go ape over Nintendo’s Donkey Kong, featuring a character that would become world-famous: Jumpman. Never heard of him? That’s because he’s better known as Mario—the name he took when his creator, Shigeru Miyamoto, makes him the star of a later game by Nintendo.",
+      "imageUrl": "assets/img/milestones/dk.jpg"
+    },
+    {
+      "id": 3,
+      "year": 1982,
+      "title": "Tron",
+      "description": "Disney taps into the video game craze by releasing the movie Tron. An arcade game featuring many of the contests from the movie also becomes a hit.",
+      "imageUrl": "assets/img/milestones/tron.jpg"
+    },
+    {
+      "id": 4,
+      "year": 1983,
+      "title": "M.U.L.E.",
+      "description": "Multiplayer play takes a huge step forward with Dan Bunten’s M.U.L.E. In the game, players compete to gather the most resources while saving their colony on the planet of Irata.",
+      "imageUrl": "assets/img/milestones/mule.jpg"
+    },
+    {
+      "id": 5,
+      "year": 1984,
+      "title": "Tetris",
+      "description": "Russian mathematician Alexey Pajitnov creates Tetris, a simple but addictive puzzle game. The game leaks out from behind the Iron Curtain, and five years later, Nintendo bundles it with every new Game Boy.",
+      "imageUrl": "assets/img/milestones/tetris.jpg"
+    },
+    {
+      "id": 6,
+      "year": 1985,
+      "title": "Nintendo Entertainment System",
+      "description": "The Nintendo Entertainment System (NES) revives an ailing United States video game industry two years after the Nintendo Corporation released it in Japan as Famicom.",
+      "imageUrl": "assets/img/milestones/nes.jpg"
+    },
+    {
+      "id": 7,
+      "year": 1986,
+      "title": "Reader Rabbit",
+      "description": "The emerging educational software market leaps ahead with the introduction of The Learning Company’s Reader Rabbit program. The educational computer business mushrooms with the introduction of CD-ROMs in the 1990s, but crashes with the rise of the Internet.",
+      "imageUrl": "assets/img/milestones/rabbit.jpg"
+    },
+    {
+      "id": 8,
+      "year": 1987,
+      "title": "Legend of Zelda",
+      "description": "It’s a good year for fantasy Role Playing Games, as Shigeru Miyamoto creates Legend of Zelda, SSI wins the video game license for Dungeons and Dragons, and Sierra’s Leisure Suit Larry gives players a different kind of adult role playing game.",
+      "imageUrl": "assets/img/milestones/zelda.jpg"
+    },
+    {
+      "id": 9,
+      "year": 1988,
+      "title": "John Madden Football",
+      "description": "John Madden Football introduces gridiron realism to computer games, making this game—and its many console sequels—perennial best-sellers.",
+      "imageUrl": "assets/img/milestones/madden.jpg"
+    },
+    {
+      "id": 10,
+      "year": 1989,
+      "title": "Game Boy",
+      "description": "Nintendo’s Game Boy popularizes handheld gaming. Game Boy is not the first handheld system with interchangeable cartridges—Milton Bradley introduced Microvision 10 years earlier—but it charms users with its good game play, ease of use, and long battery life.",
+      "imageUrl": "assets/img/milestones/gameboy.jpg"
+    }
+  ],
   "games": [
-    { "id": 1, "name": "Super Mario Bros. 3", "platform": "NES", "price": 25, "imageUrl": "assets/img/games/super-mario-3.jpg" },
-    { "id": 2, "name": "The Legend of Zelda: A Link to the Past", "platform": "SNES", "price": 40, "imageUrl": "assets/img/games/zelda-snes.jpg" },
-    { "id": 3, "name": "Sonic the Hedgehog 2", "platform": "Sega Genesis", "price": 30, "imageUrl": "assets/img/games/sonic-2.jpg" },
-    { "id": 4, "name": "Chrono Trigger", "platform": "SNES", "price": 70, "imageUrl": "assets/img/games/chrono-trigger.jpg" },
-    { "id": 5, "name": "Street Fighter II", "platform": "SNES", "price": 35, "imageUrl": "assets/img/games/sf2.jpg" },
-    { "id": 6, "name": "Metroid", "platform": "NES", "price": 20, "imageUrl": "assets/img/games/metroid.jpg" }
+    {
+      "id": 1,
+      "year": 1986,
+      "name": "Metroid",
+      "platform": "NES",
+      "price": 20,
+      "description": "Introdujo un innovador estilo de juego no lineal y una atmósfera de ciencia ficción única.",
+      "imageUrl": "assets/img/games/metroid.jpg"
+    },
+    {
+      "id": 2,
+      "year": 1988,
+      "name": "Super Mario Bros. 3",
+      "platform": "NES",
+      "price": 25,
+      "description": "Considerado uno de los mejores juegos de plataformas de todos los tiempos, con mundos expansivos y nuevos power-ups.",
+      "imageUrl": "assets/img/games/super-mario-3.jpg"
+    },
+    {
+      "id": 3,
+      "year": 1991,
+      "name": "Street Fighter II",
+      "platform": "Arcade",
+      "price": 35,
+      "description": "Revolucionó el género de los juegos de lucha con su sistema de combos y su icónico elenco de personajes.",
+      "imageUrl": "assets/img/games/sf2.jpg"
+    },
+    {
+      "id": 4,
+      "year": 1991,
+      "name": "The Legend of Zelda: A Link to the Past",
+      "platform": "SNES",
+      "price": 40,
+      "description": "Estableció muchas de las convenciones de la saga con su mundo dual y su profunda narrativa.",
+      "imageUrl": "assets/img/games/zelda-snes.jpg"
+    },
+    {
+      "id": 5,
+      "year": 1992,
+      "name": "Sonic the Hedgehog 2",
+      "platform": "Sega Genesis",
+      "price": 30,
+      "description": "Introdujo a Tails y el movimiento 'Spin Dash', llevando la velocidad de la saga a un nuevo nivel.",
+      "imageUrl": "assets/img/games/sonic-2.jpg"
+    },
+    {
+      "id": 6,
+      "year": 1995,
+      "name": "Chrono Trigger",
+      "platform": "SNES",
+      "price": 70,
+      "description": "Un JRPG aclamado por su compleja historia de viajes en el tiempo, múltiples finales y su sistema de combate.",
+      "imageUrl": "assets/img/games/chrono-trigger.jpg"
+    },
+    {
+      "id": 7,
+      "year": 1997,
+      "name": "Final Fantasy VII",
+      "platform": "PlayStation",
+      "price": 50,
+      "description": "Un JRPG que definió una generación con su historia épica, personajes memorables y sus cinemáticas.",
+      "imageUrl": "assets/img/games/ff7.jpg"
+    },
+    {
+      "id": 8,
+      "year": 1998,
+      "name": "The Legend of Zelda: Ocarina of Time",
+      "platform": "Nintendo 64",
+      "price": 60,
+      "description": "Considerado uno de los mejores videojuegos de la historia por su innovador sistema de fijación de objetivos.",
+      "imageUrl": "assets/img/games/oot.jpg"
+    }
   ]
 }

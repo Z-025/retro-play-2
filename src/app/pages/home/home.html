@@ -1,14 +1,55 @@
-<main class="container mt-4">
-    <h1>Catálogo de Juegos</h1>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col" *ngFor="let game of games">
-            <div class="card h-100">
-                <img [src]="game.imageUrl" class="card-img-top" alt="{{game.name}}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ game.name }}</h5>
-                    <p class="card-text">{{ game.platform }} - ${{ game.price }}</p>
-                </div>
-            </div>
+<main class="container-fluid mt-4">
+
+  <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="hitos-tab" data-bs-toggle="tab" data-bs-target="#hitos-pane" type="button">Hitos</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="juegos-tab" data-bs-toggle="tab" data-bs-target="#juegos-pane" type="button">Juegos Icónicos</button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+
+    <div class="tab-pane fade show active" id="hitos-pane">
+      <nav class="timeline-nav sticky-top">
+        <div *ngFor="let hito of milestones" class="timeline-nav-item" (click)="scrollTo('hito-' + hito.id)">
+          {{ hito.year }}
         </div>
+      </nav>
+      <div class="content-area">
+        <div *ngFor="let hito of milestones" [id]="'hito-' + hito.id" class="content-block">
+          <img [src]="hito.imageUrl" [alt]="hito.title">
+          <div class="text-content">
+            <h4>{{ hito.title }} ({{ hito.year }})</h4>
+            <p>{{ hito.description }}</p>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="tab-pane fade" id="juegos-pane">
+      <nav class="timeline-nav sticky-top">
+        <div *ngFor="let juego of games" class="timeline-nav-item" (click)="scrollTo('juego-' + juego.id)">
+          {{ juego.year }}
+        </div>
+      </nav>
+      <div class="content-area">
+        <div *ngFor="let juego of games" [id]="'juego-' + juego.id" class="content-block">
+          <img [src]="juego.imageUrl" [alt]="juego.name">
+          <div class="text-content">
+            <h4>{{ juego.name }} ({{ juego.year }})</h4>
+            <p class="text-muted">({{ juego.platform }})</p>
+            <p>{{ juego.description }}</p>
+            
+            <button *ngIf="authService.isAdmin()" class="btn btn-sm btn-danger mt-2" (click)="deleteGame(juego.id)">
+              Eliminar
+            </button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
 </main>

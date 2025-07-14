@@ -11,10 +11,33 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" routerLink="/login">Login</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/register">Registro</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/perfil">Mi Perfil</a></li>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home">Museo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/tienda">Tienda</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cuenta
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <ng-container *ngIf="!authService.isLoggedIn()">
+              <li><a class="dropdown-item" routerLink="/login">Iniciar Sesión</a></li>
+              <li><a class="dropdown-item" routerLink="/register">Registrarse</a></li>
+            </ng-container>
+
+            <ng-container *ngIf="authService.isLoggedIn()">
+              <li><a class="dropdown-item" routerLink="/perfil">Mi Perfil</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#" (click)="logout()">Cerrar Sesión</a></li>
+            </ng-container>
+          </ul>
+        </li>
+        
       </ul>
     </div>
   </div>

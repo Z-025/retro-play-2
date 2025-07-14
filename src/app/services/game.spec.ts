@@ -1,30 +1,48 @@
-import { TestBed } from '@angular/core/testing';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-// 1. Importa la CLASE 'GameService', no la interfaz 'Game'.
-//    Asumo que tu archivo se llama 'game.ts'.
-import { GameService } from './game'; 
+export interface Game {
+  id: number;
+  year: number;
+  name: string;
+  platform: string;
+  description: string;
+  imageUrl: string;
+}
 
-// 2. Describe la prueba para el 'GameService'.
-describe('GameService', () => {
-  // 3. La variable debe ser del tipo 'GameService'.
-  let service: GameService;
+export interface Milestone {
+  id: number;
+  year: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+}
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    // 4. Inyecta la CLASE 'GameService'.
-    service = TestBed.inject(GameService);
-  });
+@Injectable({
+  providedIn: 'root'
+})
+export class GameService {
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+  private apiUrl = 'http://localhost:3000';
 
-  // Una prueba extra para verificar que el método getGames() funciona.
-  it('getGames() debería retornar un array de juegos', () => {
-    const games = service.getGames();
-    // Comprueba que el resultado es un array.
-    expect(Array.isArray(games)).toBe(true);
-    // Comprueba que el array no está vacío.
-    expect(games.length).toBeGreaterThan(0);
-  });
-});
+  constructor(private http: HttpClient) { }
+
+  getMilestones(): Observable<Milestone[]> {
+    return this.http.get<Milestone[]>(`${this.apiUrl}/milestones`);
+  }
+
+  getGames(): Observable<Game[]> {
+    return this.http.get<Game[]>(`${this.apiUrl}/games`);
+  }
+
+  // --- MÉTODO CRUD: DELETE ---
+  deleteGame(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/games/${id}`);
+  }
+
+  // --- MÉTODO CRUD: POST ---
+  addGame(game: Omit<Game, 'id'>): Observable<Game> {
+    return this.http.post<Game>(`${this.apiUrl}/games`, game);
+  }
+}
