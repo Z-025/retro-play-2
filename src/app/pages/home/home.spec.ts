@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+// 1. Importa el módulo para pruebas HTTP
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Home } from './home';
 
 describe('Home', () => {
@@ -8,10 +9,11 @@ describe('Home', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Home]
+      // 2. Añade HttpClientTestingModule a los imports
+      imports: [Home, HttpClientTestingModule]
     })
     .compileComponents();
-
+    
     fixture = TestBed.createComponent(Home);
     component = fixture.componentInstance;
     fixture.detectChanges();
