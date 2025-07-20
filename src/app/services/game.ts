@@ -24,7 +24,7 @@ export interface Milestone {
   providedIn: 'root'
 })
 export class GameService {
-  private dataUrl = 'assets/db.json'; // Apunta al archivo local
+  private dataUrl = 'assets/db.json'; // ARREGLADO
 
   constructor(private http: HttpClient) { }
 
