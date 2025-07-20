@@ -24,18 +24,20 @@
 /* Estilo para el área de contenido */
 .content-area {
   padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .content-block {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 3rem;
-  padding-top: 60px; /* Espacio para que el ancla del scroll quede debajo de la barra */
-  margin-top: -60px; /* Compensa el padding para que no haya saltos */
+  padding-top: 70px; /* Espacio para que el ancla del scroll quede debajo de la barra */
+  margin-top: -70px; /* Compensa el padding para que no haya saltos */
 }
 
 .content-block img {
-  width: 200px;
+  width: 250px;
   height: auto;
   margin-right: 2rem;
   border-radius: 8px;
@@ -43,5 +45,5 @@
 }
 
 .content-block .text-content {
-  max-width: 600px;
+  flex: 1;
 }

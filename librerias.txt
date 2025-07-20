@@ -1,0 +1,3 @@
+Librerías adicionales instaladas en el proyecto:
+
+1. Compodoc: Se utilizó para generar la documentación del código fuente a partir de los comentarios JSDoc.
