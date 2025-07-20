@@ -12,9 +12,13 @@
           <p class="card-text text-muted">{{ game.platform }}</p>
           <div class="mt-auto">
             <p class="card-text fs-4 fw-bold text-end">${{ game.price }}</p>
-            <button class="btn btn-primary w-100" (click)="addToCart(game.name)">
+            
+            <button *ngIf="authService.isLoggedIn() && !authService.isAdmin()"
+                    class="btn btn-primary w-100" 
+                    (click)="addToCart(game.name)">
               Añadir al Carrito
             </button>
+
           </div>
         </div>
       </div>

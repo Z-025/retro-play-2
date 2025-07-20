@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Game, GameService } from '../../services/game';
-import { AuthService } from '../../services/auth';
+import { AuthService } from '../../services/auth'; // 1. Importa el servicio
 
 @Component({
   selector: 'app-tienda',
@@ -28,7 +28,6 @@ export class Tienda implements OnInit {
     });
   }
 
-  // Lógica simulada para añadir al carrito
   addToCart(gameName: string): void {
     console.log(`${gameName} ha sido añadido al carrito.`);
     alert(`${gameName} ha sido añadido al carrito.`);

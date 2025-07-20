@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 export interface Game {
   id: number;
@@ -24,31 +24,19 @@ export interface Milestone {
   providedIn: 'root'
 })
 export class GameService {
-  private apiUrl = 'http://localhost:3000'; // URL base de la API
+  private dataUrl = 'assets/db.json'; // Apunta al archivo local
 
   constructor(private http: HttpClient) { }
 
-  // --- GET ---
   getMilestones(): Observable<Milestone[]> {
-    return this.http.get<Milestone[]>(`${this.apiUrl}/milestones`);
+    return this.http.get<{ milestones: Milestone[] }>(this.dataUrl).pipe(
+      map(response => response.milestones)
+    );
   }
 
   getGames(): Observable<Game[]> {
-    return this.http.get<Game[]>(`${this.apiUrl}/games`);
-  }
-
-  // --- DELETE ---
-  deleteGame(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/games/${id}`);
-  }
-
-  // --- POST ---
-  addGame(game: Omit<Game, 'id'>): Observable<Game> {
-    return this.http.post<Game>(`${this.apiUrl}/games`, game);
-  }
-
-  // --- PUT ---
-  updateGame(game: Game): Observable<Game> {
-    return this.http.put<Game>(`${this.apiUrl}/games/${game.id}`, game);
+    return this.http.get<{ games: Game[] }>(this.dataUrl).pipe(
+      map(response => response.games)
+    );
   }
 }

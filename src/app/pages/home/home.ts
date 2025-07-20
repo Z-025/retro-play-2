@@ -33,13 +33,6 @@ export class Home implements OnInit {
     });
   }
 
-  // 3. Añade el método deleteGame
-  deleteGame(id: number): void {
-    this.gameService.deleteGame(id).subscribe(() => {
-      this.loadGames();
-    });
-  }
-
   scrollTo(fragment: string): void {
     const element = document.getElementById(fragment);
     if (element) {
